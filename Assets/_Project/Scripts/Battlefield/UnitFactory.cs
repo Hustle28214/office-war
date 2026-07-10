@@ -1,13 +1,11 @@
-using OfficeWar.Cards;
-using OfficeWar.Core;
+// =============================================================================
+// 课 07 | UnitFactory | 教案.md
+// =============================================================================
 
 namespace OfficeWar.Battlefield
 {
     public static class UnitFactory
     {
-        public static UnitEntity Spawn(RuntimeCard card, Faction faction, BoardSlot slot)
-        {
-            return new UnitEntity(card, faction, slot);
-        }
+        // LEARN: static Spawn(RuntimeCard, Faction, BoardSlot) → UnitEntity
     }
 }
