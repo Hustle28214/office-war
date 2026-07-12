@@ -10,7 +10,7 @@ namespace OfficeWar.Editor
     {
         const string ScenePath = "Assets/_Project/Scenes/Battle.unity";
 
-        [MenuItem("Office War/Setup Demo Scene")]
+        [MenuItem("明天能上线吗/Setup Demo Scene")]
         public static void SetupDemoScene()
         {
             var scene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
@@ -20,7 +20,7 @@ namespace OfficeWar.Editor
 
             EditorSceneManager.SaveScene(scene, ScenePath);
             EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
-            Debug.Log($"Demo scene saved to {ScenePath}. Press Play to start.");
+            Debug.Log($"Demo scene saved to {ScenePath}. Press Play to start. 《明天能上线吗》");
         }
     }
 }

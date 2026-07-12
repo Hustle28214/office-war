@@ -1,3 +1,7 @@
+// =============================================================================
+// Reference · Core/GameEnums — 与协作版 plan / 教案课 02 对齐
+// =============================================================================
+
 namespace OfficeWar.Core
 {
     public enum JobType
@@ -10,29 +14,75 @@ namespace OfficeWar.Core
 
     public enum Faction
     {
-        Player,
-        Enemy
+        Team,
+        Crisis
     }
 
     public enum BoardRow
     {
-        PlayerBack,
+        TeamBack,
         Frontline,
-        EnemyBack
+        CrisisBack
     }
 
     public enum TurnPhase
     {
-        Draw,
+        MorningStandup,
         Main,
-        End
+        DayEnd
     }
 
     public enum GameResult
     {
         Ongoing,
-        PlayerWin,
-        EnemyWin
+        TeamWin,
+        TeamLose
+    }
+
+    public enum PlayerRole
+    {
+        PM,
+        Dev,
+        Design,
+        QA,
+        Scrum
+    }
+
+    public enum RoleArchetype
+    {
+        PmBusiness,
+        PmPlatform,
+        PmGrowth,
+        DevFrontend,
+        DevBackend,
+        DevClient,
+        DevInfra,
+        DesignVisual,
+        DesignUX,
+        DesignMotion,
+        QaFunctional,
+        QaAutomation,
+        QaPerfSec,
+        ScrumAgile,
+        ScrumTechLead
+    }
+
+    public enum KpiTrack
+    {
+        Delivery,
+        Quality,
+        UX,
+        Morale,
+        Pressure
+    }
+
+    public enum CardFeel
+    {
+        ThrowDoc,
+        SendMessage,
+        StampBug,
+        MergePR,
+        AlignMeeting
     }
 
     public enum PlayerActionMode

@@ -1,11 +1,11 @@
 // =============================================================================
-// 课 03 | CardCatalog | 教案.md
+// 课 03 | CardCatalog | 教案.md · plan.md §三.0.2
 // =============================================================================
-// 步骤：BuildCache 8 种牌；CreateDemoDeck 凑 20 张
-// 参考：Reference/Data/CardCatalog.cs
+// MVP：公共核心包 + 一个 Starter 子路线包（如 DevFrontend）拼成本局牌库。
 // =============================================================================
 
 using System.Collections.Generic;
+using OfficeWar.Core;
 
 namespace OfficeWar.Data
 {
@@ -15,16 +15,21 @@ namespace OfficeWar.Data
         {
             get
             {
-                // LEARN: 懒加载 _cache
+                // LEARN: 懒加载公共牌 + 各 Starter 包牌
                 return new List<OfficeCardData>();
             }
         }
 
-        public static List<OfficeCardData> CreateDemoDeck()
+        /// <summary>入门局：核心包 + 指定子路线 Starter 包</summary>
+        public static List<OfficeCardData> CreateStarterDeck(PlayerRole role, RoleArchetype archetype)
         {
-            // LEARN: 返回 20 张 RuntimeCard 用的 OfficeCardData 列表
+            // LEARN: 核心约 12~16 张 + 子路线 8~10 张；总数可仍约 20~24
             return new List<OfficeCardData>();
         }
+
+        /// <summary>兼容旧 Demo 名：默认 Dev + DevFrontend Starter</summary>
+        public static List<OfficeCardData> CreateDemoDeck() =>
+            CreateStarterDeck(PlayerRole.Unset, RoleArchetype.Unset);
 
         public static OfficeCardData Find(string cardId)
         {

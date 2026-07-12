@@ -1,27 +1,17 @@
 // ============================================================================
-// LEARN [阶段8] PerkController — 福利系统核心（本文件是练习主体）
+// LEARN [课18] PerkController — 福利系统（plan.md §三.7）
 // ============================================================================
 //
-// 【你要实现的公开 API】
+// 【公开 API】
 //   bool TryActivatePerk(Faction faction, PerkType type)
 //   int GetActionCostModifier(Faction faction)
 //   int GetHireCostModifier(Faction faction, bool isFirstDeployThisBattle)
-//   void OnTurnStarted(Faction faction, int turnNumber)
+//   void OnDayStarted(Faction faction, int workDay)   // 原 OnTurnStarted
 //   void OnFrontlineChanged(Faction? frontlineOwner)
-//   void TickEndOfTurn(Faction faction)   // Buff 回合递减、冷却 tick
+//   void TickEndOfDay(Faction faction)
 //
-// 【挂钩位置 — 在 BattleManager 中搜索 LEARN [阶段8]】
-//   BeginTurn()      → OnTurnStarted
-//   TryAdvanceUnit   → 扣费时减去 GetActionCostModifier
-//   TryPlayCard      → 减去 GetHireCostModifier
-//   占线变化后       → OnFrontlineChanged
-//
-// 【建议实现顺序】
-//   1. 只做下午茶（Manual + 减 actionCost）
-//   2. 加 ActivePerk 列表与 duration
-//   3. 团建占线计数
-//   4. GlobalEventScheduler（第5回合培训）→ 可拆到单独类
-//   5. CompetitivePerkResolver / StealReceptionResolver
+// 【挂钩】BattleManager：BeginDay / TryAdvanceUnit / TryPlayCard / 占线变化
+// 【协作语义】效果优先推 KPI / 降 Pressure，少用「打对面 HQ」
 //
 // ============================================================================
 

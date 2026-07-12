@@ -1,8 +1,11 @@
 // =============================================================================
-// 课 06 | BoardController | 教案.md
+// 课 06 | BoardController | 教案.md · plan.md §二.2
+// =============================================================================
+// 行序：CrisisBack → Frontline → TeamBack
 // =============================================================================
 
 using System.Collections.Generic;
+using OfficeWar.Core;
 
 namespace OfficeWar.Battlefield
 {
@@ -12,6 +15,9 @@ namespace OfficeWar.Battlefield
 
         public IReadOnlyList<BoardSlot> Slots => _slots;
 
-        // LEARN: Initialize, FrontlineSlot, GetBackSlot, GetAllUnits, ResetAllActedFlags
+        // LEARN: Initialize(columnsPerRow=1)
+        // LEARN: FrontlineSlot
+        // LEARN: GetBackSlot(Faction) — Team→TeamBack, Crisis→CrisisBack
+        // LEARN: GetAllUnits / ResetAllActedFlags
     }
 }
